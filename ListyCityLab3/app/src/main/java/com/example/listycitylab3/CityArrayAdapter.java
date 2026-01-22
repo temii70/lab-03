@@ -19,20 +19,25 @@ public class CityArrayAdapter extends ArrayAdapter<City> {
 
     @NonNull
     @Override
+
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view;
+
         if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(R.layout.content, parent, false);
-        } else {
+        }
+
+        else {
             view = convertView;
         }
 
-        City city = getItem(position);
+        City city = getItem(position); //getting the pos
 
         TextView cityName = view.findViewById(R.id.city_text);
         TextView provinceName = view.findViewById(R.id.province_text);
 
         cityName.setText(city.getName());
+
         provinceName.setText(city.getProvince());
 
         return view;
